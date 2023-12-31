@@ -76,6 +76,8 @@ export const Option = styled.button`
 `;
 export const ContentWrapper = styled.div`
   margin-top: 20px;
+  text-align: justify;
+  margin-left: 10px;
 `;
 export const Price = styled.div`
   margin-top: 20px;
@@ -106,7 +108,7 @@ export const Circle = styled.div`
 `;
 export const CircleText = styled.span`
   font-size: 12px;
-  margin-left: -30px;
+  margin-left: -37px;
   height: 35px;
   align-items: center;
   display: flex;
@@ -117,6 +119,7 @@ export const ImageContainer = styled.div`
   display: flex;
   height: 200px;
   justify-content: center;
+  gap: 6px;
 `;
 export const ListingWrapper = styled.div`
   background-color: #f8f8ff;
@@ -167,4 +170,9 @@ export const CountPrice = styled.div`
   font-size: 12px;
   margin-top: 20px;
   margin-bottom: 10px;
+`;
+export const TitleText = styled.div``;
+export const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

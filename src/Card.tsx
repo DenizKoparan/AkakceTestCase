@@ -23,9 +23,10 @@ export interface ProductProps {
     code?: number;
   };
   display?: string;
+  listing?: boolean;
 }
 
-const Card = ({ item, display }: ProductProps) => {
+const Card = ({ item, display, listing }: ProductProps) => {
   const formatter = new Intl.NumberFormat();
   //   const [posts, setPosts] = useState([]);
 
@@ -37,11 +38,20 @@ const Card = ({ item, display }: ProductProps) => {
       onClick={() => detailClicked(item.code || 0)}
       displaySelect={display}
     >
-      <ImageContainer>
-        <img src={item.imageUrl} />
-        <Circle />
-        <CircleText>{item.dropRatio}%</CircleText>
-      </ImageContainer>
+      {!listing ? (
+        <ImageContainer>
+          <img src={item.imageUrl} alt="" />
+          <Circle />
+          <CircleText>{item.dropRatio}%</CircleText>
+        </ImageContainer>
+      ) : (
+        <ImageContainer>
+          <Circle />
+          <CircleText>{item.dropRatio}%</CircleText>
+          <img src={item.imageUrl} alt="" />
+        </ImageContainer>
+      )}
+
       <ContentWrapper>
         <Name>{item.name}</Name>
         <Price>{formatter.format(item.price || 0)} TL</Price>

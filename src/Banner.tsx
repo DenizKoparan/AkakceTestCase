@@ -20,13 +20,11 @@ const Banner = ({ items }: BannerProps) => {
         {items &&
           items.map((item) =>
             item.imageUrl ? (
-              <>
-                <SwiperSlide>
-                  <ImageWrapper>
-                    <Card display={"flex"} item={item} />
-                  </ImageWrapper>
-                </SwiperSlide>
-              </>
+              <SwiperSlide>
+                <ImageWrapper>
+                  <Card listing={false} display={"flex"} item={item} />
+                </ImageWrapper>
+              </SwiperSlide>
             ) : null
           )}
       </Carousel>

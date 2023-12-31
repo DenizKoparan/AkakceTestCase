@@ -29,7 +29,7 @@ function ListingProduct() {
       <ListingWrapper>
         {posts?.result.products.map((item) => (
           <CardWrapper>
-            <Card display={"grid"} item={item} />
+            <Card listing={true} display={"grid"} item={item} />
           </CardWrapper>
         ))}
       </ListingWrapper>

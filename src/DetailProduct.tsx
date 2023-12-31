@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
@@ -16,6 +15,8 @@ import {
   Update,
   FreeShipping,
   CountPrice,
+  TitleText,
+  HeaderContainer,
 } from "./styled";
 export interface ObjectProps {
   result: ResultProps;
@@ -50,18 +51,21 @@ const DetailProduct = () => {
     setActive(selected);
   };
   const formatter = new Intl.NumberFormat();
-
-  console.log("queryParams", posts?.result);
   return (
     <DetailWrapper>
-      <Rating initialValue={posts?.result.rating} />
-
-      <Name>{posts?.result.mkName}</Name>
-
-      <Detail>{posts?.result.productName}</Detail>
-
-      <Badge>{posts?.result.badge}</Badge>
-
+      <HeaderContainer>
+        <TitleText>
+          <Name>{posts?.result.mkName}</Name>
+          <Detail>{posts?.result.productName}</Detail>
+          <Badge>{posts?.result.badge}</Badge>
+        </TitleText>
+        <Rating
+          initialValue={posts?.result.rating}
+          readonly
+          size={25}
+          allowFraction={true}
+        />
+      </HeaderContainer>
       <ImageContainer>
         <img src={posts?.result.imageUrl} alt="" />
       </ImageContainer>
